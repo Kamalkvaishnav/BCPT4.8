@@ -58,10 +58,12 @@ namespace ConsolFromApp
             this.headCountBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
+            this.headCountUserControl11 = new ConsolFromApp.headCountUserControl1();
+            this.trsView1 = new ConsolFromApp.TRSView();
             this.avaiCapView1 = new ConsolFromApp.avaiCapView();
             this.homeView11 = new ConsolFromApp.homeView1();
-            
             this.rP_View2 = new ConsolFromApp.RP_View();
+            this.gocMasterBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -184,21 +186,22 @@ namespace ConsolFromApp
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 126);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1444, 574);
+            this.panel6.Size = new System.Drawing.Size(1444, 652);
             this.panel6.TabIndex = 21;
             // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Controls.Add(this.headCountUserControl11);
+            this.mainPanel.Controls.Add(this.trsView1);
             this.mainPanel.Controls.Add(this.avaiCapView1);
             this.mainPanel.Controls.Add(this.homeView11);
-            
             this.mainPanel.Controls.Add(this.rP_View2);
             this.mainPanel.Controls.Add(this.slidebar);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1444, 574);
+            this.mainPanel.Size = new System.Drawing.Size(1444, 652);
             this.mainPanel.TabIndex = 0;
             // 
             // slidebar
@@ -212,13 +215,14 @@ namespace ConsolFromApp
             this.slidebar.Controls.Add(this.rpViewBtn);
             this.slidebar.Controls.Add(this.trsViewBtn);
             this.slidebar.Controls.Add(this.headCountBtn);
+            this.slidebar.Controls.Add(this.gocMasterBtn);
             this.slidebar.Controls.Add(this.exitBtn);
             this.slidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.slidebar.Location = new System.Drawing.Point(0, 0);
-            this.slidebar.MaximumSize = new System.Drawing.Size(257, 602);
-            this.slidebar.MinimumSize = new System.Drawing.Size(70, 500);
+            this.slidebar.MaximumSize = new System.Drawing.Size(257, 702);
+            this.slidebar.MinimumSize = new System.Drawing.Size(70, 600);
             this.slidebar.Name = "slidebar";
-            this.slidebar.Size = new System.Drawing.Size(257, 574);
+            this.slidebar.Size = new System.Drawing.Size(257, 652);
             this.slidebar.TabIndex = 25;
             // 
             // panelMenu
@@ -389,6 +393,7 @@ namespace ConsolFromApp
             this.headCountBtn.TabIndex = 32;
             this.headCountBtn.Text = "Headcount";
             this.headCountBtn.UseVisualStyleBackColor = false;
+            this.headCountBtn.Click += new System.EventHandler(this.headCountBtn_Click);
             // 
             // exitBtn
             // 
@@ -401,7 +406,7 @@ namespace ConsolFromApp
             this.exitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitBtn.Location = new System.Drawing.Point(3, 499);
+            this.exitBtn.Location = new System.Drawing.Point(3, 556);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.exitBtn.Size = new System.Drawing.Size(250, 54);
@@ -410,12 +415,32 @@ namespace ConsolFromApp
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // headCountUserControl11
+            // 
+            this.headCountUserControl11.BackColor = System.Drawing.Color.White;
+            this.headCountUserControl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.headCountUserControl11.Location = new System.Drawing.Point(257, 0);
+            this.headCountUserControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.headCountUserControl11.Name = "headCountUserControl11";
+            this.headCountUserControl11.Size = new System.Drawing.Size(1187, 652);
+            this.headCountUserControl11.TabIndex = 33;
+            // 
+            // trsView1
+            // 
+            this.trsView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trsView1.ForeColor = System.Drawing.Color.Navy;
+            this.trsView1.Location = new System.Drawing.Point(257, 0);
+            this.trsView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trsView1.Name = "trsView1";
+            this.trsView1.Size = new System.Drawing.Size(1187, 652);
+            this.trsView1.TabIndex = 32;
+            // 
             // avaiCapView1
             // 
             this.avaiCapView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.avaiCapView1.Location = new System.Drawing.Point(257, 0);
             this.avaiCapView1.Name = "avaiCapView1";
-            this.avaiCapView1.Size = new System.Drawing.Size(1187, 574);
+            this.avaiCapView1.Size = new System.Drawing.Size(1187, 652);
             this.avaiCapView1.TabIndex = 31;
             // 
             // homeView11
@@ -425,18 +450,36 @@ namespace ConsolFromApp
             this.homeView11.Location = new System.Drawing.Point(257, 0);
             this.homeView11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.homeView11.Name = "homeView11";
-            this.homeView11.Size = new System.Drawing.Size(1187, 574);
+            this.homeView11.Size = new System.Drawing.Size(1187, 652);
             this.homeView11.TabIndex = 30;
             // 
-           
             // rP_View2
             // 
             this.rP_View2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rP_View2.Location = new System.Drawing.Point(257, 0);
             this.rP_View2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rP_View2.Name = "rP_View2";
-            this.rP_View2.Size = new System.Drawing.Size(1187, 574);
+            this.rP_View2.Size = new System.Drawing.Size(1187, 652);
             this.rP_View2.TabIndex = 26;
+            // 
+            // gocMasterBtn
+            // 
+            this.gocMasterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gocMasterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.gocMasterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gocMasterBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gocMasterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.gocMasterBtn.Font = new System.Drawing.Font("Candara", 10.2F, System.Drawing.FontStyle.Bold);
+            this.gocMasterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.gocMasterBtn.Image = ((System.Drawing.Image)(resources.GetObject("gocMasterBtn.Image")));
+            this.gocMasterBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gocMasterBtn.Location = new System.Drawing.Point(3, 499);
+            this.gocMasterBtn.Name = "gocMasterBtn";
+            this.gocMasterBtn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.gocMasterBtn.Size = new System.Drawing.Size(250, 51);
+            this.gocMasterBtn.TabIndex = 33;
+            this.gocMasterBtn.Text = "GOC Master";
+            this.gocMasterBtn.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -444,12 +487,11 @@ namespace ConsolFromApp
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.exitBtn;
-            this.ClientSize = new System.Drawing.Size(1444, 700);
+            this.ClientSize = new System.Drawing.Size(1444, 778);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -501,5 +543,8 @@ namespace ConsolFromApp
         private homeView1 homeView11;
         private avaiCapView avaiCapView1;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
+        private TRSView trsView1;
+        private headCountUserControl1 headCountUserControl11;
+        private Button gocMasterBtn;
     }
 }

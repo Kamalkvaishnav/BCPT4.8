@@ -123,6 +123,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="headcountGocUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="headcountGocUserControl.designer.cs">
+      <DependentUpon>headcountGocUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,15 @@
     <Compile Include="avaiCapView.designer.cs">
       <DependentUpon>avaiCapView.cs</DependentUpon>
     </Compile>
+    <Compile Include="TRSView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TRSView.designer.cs">
+      <DependentUpon>TRSView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="headcountGocUserControl.resx">
+      <DependentUpon>headcountGocUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +191,9 @@
     </Compile>
     <EmbeddedResource Include="RP_View.resx">
       <DependentUpon>RP_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRSView.resx">
+      <DependentUpon>TRSView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

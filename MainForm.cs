@@ -27,7 +27,8 @@ namespace ConsolFromApp
             homeView11.Visible = true;
             rP_View2.Visible = false;
             avaiCapView1.Visible = false;
-            
+            trsView1.Visible = false;
+            headCountUserControl11.Visible = false;
         }
 
         private void slidebarTimer_Tick_1(object sender, EventArgs e)
@@ -86,25 +87,28 @@ namespace ConsolFromApp
             avaiCapView1.Visible = false;
             homeView11.Visible = true;
             rP_View2.Visible = false;
-           
+            headCountUserControl11.Visible = false;
+            trsView1.Visible = false;
+
 
         }
 
         private void rpViewBtn_Click(object sender, EventArgs e)
         {
-
-            avaiCapView1.Visible = false;
             rP_View2.Visible = true;
-           
+            avaiCapView1.Visible = false; 
+            headCountUserControl11.Visible = false;
             homeView11.Visible = false;
+            trsView1.Visible = false;
         }
 
         private void trsViewBtn_Click_1(object sender, EventArgs e)
         {
             avaiCapView1.Visible = false;
-            
+            headCountUserControl11.Visible = false;
             homeView11.Visible = false;
             rP_View2.Visible = false;
+            trsView1.Visible = true;
         }
 
        
@@ -129,11 +133,20 @@ namespace ConsolFromApp
         private void acViewBtn_Click(object sender, EventArgs e)
         {
             avaiCapView1.Visible = true;
-            
+            headCountUserControl11.Visible = false;
             homeView11.Visible = false;
             rP_View2.Visible = false;
+            trsView1.Visible = false;
         }
 
-        
+        private void headCountBtn_Click(object sender, EventArgs e)
+        {
+            headCountUserControl11.Visible = true;
+            avaiCapView1.Visible = false;
+            homeView11.Visible = false;
+            rP_View2.Visible = false;
+            trsView1.Visible = false;
+
+        }
     }
 }
