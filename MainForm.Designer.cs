@@ -56,6 +56,7 @@ namespace ConsolFromApp
             this.rpViewBtn = new System.Windows.Forms.Button();
             this.trsViewBtn = new System.Windows.Forms.Button();
             this.headCountBtn = new System.Windows.Forms.Button();
+            this.gocMasterBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             this.headCountUserControl11 = new ConsolFromApp.headCountUserControl1();
@@ -63,7 +64,7 @@ namespace ConsolFromApp
             this.avaiCapView1 = new ConsolFromApp.avaiCapView();
             this.homeView11 = new ConsolFromApp.homeView1();
             this.rP_View2 = new ConsolFromApp.RP_View();
-            this.gocMasterBtn = new System.Windows.Forms.Button();
+            this.allocation_Master1 = new BCPT.Allocation_Master();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -192,6 +193,7 @@ namespace ConsolFromApp
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Controls.Add(this.allocation_Master1);
             this.mainPanel.Controls.Add(this.headCountUserControl11);
             this.mainPanel.Controls.Add(this.trsView1);
             this.mainPanel.Controls.Add(this.avaiCapView1);
@@ -314,6 +316,7 @@ namespace ConsolFromApp
             this.allocationMasterBtn.TabIndex = 28;
             this.allocationMasterBtn.Text = "Allocation Master";
             this.allocationMasterBtn.UseVisualStyleBackColor = false;
+            this.allocationMasterBtn.Click += new System.EventHandler(this.allocationMasterBtn_Click);
             // 
             // acViewBtn
             // 
@@ -395,6 +398,25 @@ namespace ConsolFromApp
             this.headCountBtn.UseVisualStyleBackColor = false;
             this.headCountBtn.Click += new System.EventHandler(this.headCountBtn_Click);
             // 
+            // gocMasterBtn
+            // 
+            this.gocMasterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gocMasterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.gocMasterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gocMasterBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gocMasterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.gocMasterBtn.Font = new System.Drawing.Font("Candara", 10.2F, System.Drawing.FontStyle.Bold);
+            this.gocMasterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.gocMasterBtn.Image = ((System.Drawing.Image)(resources.GetObject("gocMasterBtn.Image")));
+            this.gocMasterBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gocMasterBtn.Location = new System.Drawing.Point(3, 499);
+            this.gocMasterBtn.Name = "gocMasterBtn";
+            this.gocMasterBtn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.gocMasterBtn.Size = new System.Drawing.Size(250, 51);
+            this.gocMasterBtn.TabIndex = 33;
+            this.gocMasterBtn.Text = "GOC Master";
+            this.gocMasterBtn.UseVisualStyleBackColor = false;
+            // 
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -462,24 +484,13 @@ namespace ConsolFromApp
             this.rP_View2.Size = new System.Drawing.Size(1187, 652);
             this.rP_View2.TabIndex = 26;
             // 
-            // gocMasterBtn
+            // allocation_Master1
             // 
-            this.gocMasterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gocMasterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gocMasterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gocMasterBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gocMasterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gocMasterBtn.Font = new System.Drawing.Font("Candara", 10.2F, System.Drawing.FontStyle.Bold);
-            this.gocMasterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.gocMasterBtn.Image = ((System.Drawing.Image)(resources.GetObject("gocMasterBtn.Image")));
-            this.gocMasterBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.gocMasterBtn.Location = new System.Drawing.Point(3, 499);
-            this.gocMasterBtn.Name = "gocMasterBtn";
-            this.gocMasterBtn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.gocMasterBtn.Size = new System.Drawing.Size(250, 51);
-            this.gocMasterBtn.TabIndex = 33;
-            this.gocMasterBtn.Text = "GOC Master";
-            this.gocMasterBtn.UseVisualStyleBackColor = false;
+            this.allocation_Master1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.allocation_Master1.Location = new System.Drawing.Point(257, 0);
+            this.allocation_Master1.Name = "allocation_Master1";
+            this.allocation_Master1.Size = new System.Drawing.Size(1187, 652);
+            this.allocation_Master1.TabIndex = 34;
             // 
             // MainForm
             // 
@@ -546,5 +557,6 @@ namespace ConsolFromApp
         private TRSView trsView1;
         private headCountUserControl1 headCountUserControl11;
         private Button gocMasterBtn;
+        private BCPT.Allocation_Master allocation_Master1;
     }
 }

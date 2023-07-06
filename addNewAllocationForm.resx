@@ -117,17 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnBhoWDiW6XeXKAAABXElEQVRYR82VvUoDQRSFx0JsLcXZ
-        sM3GVbCRvIQ2voSdr+GL2PkOgiKIhT+1rkkhrGAttgp6TzxgnNwJyTh38YMDYc7M/WZDwroUhv3i6nGj
-        +Pwdf8nanmn5d1jbo8kR1vZocoS1PZocYW2PJkdY26PJEdb2aHKEtT2aHGFtjyZHWNujyRHW9mhyhLU9
-        mhxhbY8mR1jnRd5855psnsjZM45JZ9j3t9rw+eJvOCYdeQovw9rp4bMjF3+531orOeZvPGz2tuVpXjVR
-        JG+jan2Hx/PQ1MWufBvviizMR1P39nksLzL8IJBpOeR2G5raHynScdBxmx3yZ18S2XEol9/ICTpuW4xw
-        GJej3A0GyyI8/TnjL0ZVtcI6yqQD4fLiFwBPZbkqe68RfObyTCYdCJfTLpBC1BMtMhP1RIvMRD3RIjNR
-        T1h0Fer/xwWew7KDtNSPL7An6fISLV5uzjn3BX3D5r3l1TQ7AAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="mySqlCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="mySqlCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

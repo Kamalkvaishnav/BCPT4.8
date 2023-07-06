@@ -3,6 +3,7 @@ using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
 using System;
+using BCPT;
 
 namespace ConsolFromApp
 {
@@ -20,11 +21,17 @@ namespace ConsolFromApp
         }
 
 
+        public void RefreshAllocationMaster()
+        {
+            allocation_Master1.LoadData(); // Assuming allocationMaster is the instance of the Allocation_Master user control
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             homeView1.instance.lb1.Text = user.Text;
+            //gocMaster.instance.loginId = user.Text;
             homeView11.Visible = true;
+            allocation_Master1.Visible = false;
             rP_View2.Visible = false;
             avaiCapView1.Visible = false;
             trsView1.Visible = false;
@@ -89,6 +96,7 @@ namespace ConsolFromApp
             rP_View2.Visible = false;
             headCountUserControl11.Visible = false;
             trsView1.Visible = false;
+            allocation_Master1.Visible = false;
 
 
         }
@@ -100,6 +108,7 @@ namespace ConsolFromApp
             headCountUserControl11.Visible = false;
             homeView11.Visible = false;
             trsView1.Visible = false;
+            allocation_Master1.Visible = false;
         }
 
         private void trsViewBtn_Click_1(object sender, EventArgs e)
@@ -109,6 +118,7 @@ namespace ConsolFromApp
             homeView11.Visible = false;
             rP_View2.Visible = false;
             trsView1.Visible = true;
+            allocation_Master1.Visible = false;
         }
 
        
@@ -137,6 +147,7 @@ namespace ConsolFromApp
             homeView11.Visible = false;
             rP_View2.Visible = false;
             trsView1.Visible = false;
+            allocation_Master1.Visible = false;
         }
 
         private void headCountBtn_Click(object sender, EventArgs e)
@@ -145,8 +156,19 @@ namespace ConsolFromApp
             avaiCapView1.Visible = false;
             homeView11.Visible = false;
             rP_View2.Visible = false;
+            allocation_Master1.Visible = false;
             trsView1.Visible = false;
 
+        }
+
+        private void allocationMasterBtn_Click(object sender, EventArgs e)
+        {
+            headCountUserControl11.Visible = false;
+            avaiCapView1.Visible = false;
+            homeView11.Visible = false;
+            rP_View2.Visible = false;
+            allocation_Master1.Visible = true;
+            trsView1.Visible = false;
         }
     }
 }

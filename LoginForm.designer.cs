@@ -127,6 +127,7 @@ namespace ConsolFromApp
             this.ClearButton.TabIndex = 6;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click_1);
             // 
             // Exit
             // 
@@ -142,6 +143,7 @@ namespace ConsolFromApp
             this.Exit.TabIndex = 7;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click_1);
             // 
             // pictureBox5
             // 

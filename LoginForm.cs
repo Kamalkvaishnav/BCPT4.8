@@ -73,14 +73,14 @@ namespace ConsolFromApp
             }
         }
 
-        private void ClearButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click_1(object sender, EventArgs e)
         {
             userNameBox.Clear();
             pwdBox.Clear();
             userNameBox.Focus();
         }
 
-        private void Exit_Click(object sender, EventArgs e)
+        private void Exit_Click_1(object sender, EventArgs e)
         {
             DialogResult res;
             res = MessageBox.Show("Do you really want to exit?", "EXIT", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

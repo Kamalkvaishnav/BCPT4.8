@@ -117,6 +117,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addNewAllocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNewAllocationForm.Designer.cs">
+      <DependentUpon>addNewAllocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allocation_Master.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Allocation_Master.Designer.cs">
+      <DependentUpon>Allocation_Master.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,12 @@
     <Compile Include="TRSView.designer.cs">
       <DependentUpon>TRSView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addNewAllocationForm.resx">
+      <DependentUpon>addNewAllocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allocation_Master.resx">
+      <DependentUpon>Allocation_Master.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="headcountGocUserControl.resx">
       <DependentUpon>headcountGocUserControl.cs</DependentUpon>
     </EmbeddedResource>

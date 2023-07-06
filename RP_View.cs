@@ -205,5 +205,10 @@ namespace ConsolFromApp
 
             (rpViewDataGrid.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

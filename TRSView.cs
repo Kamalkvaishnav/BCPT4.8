@@ -208,7 +208,6 @@ namespace ConsolFromApp
                 adapter = new MySqlDataAdapter(command);
                 table = new DataTable();
                 adapter.Fill(table);
-                MessageBox.Show(table.Rows.Count.ToString());
                 dataGridView1.DataSource = table;
             }
             else if (selectedMonth != 0 && string.IsNullOrEmpty(textBox5.Text))
@@ -348,6 +347,16 @@ namespace ConsolFromApp
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

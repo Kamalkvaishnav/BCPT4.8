@@ -31,11 +31,11 @@ namespace ConsolFromApp
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RP_View));
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +54,6 @@ namespace ConsolFromApp
             this.panel6 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,7 +80,7 @@ namespace ConsolFromApp
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1342, 131);
+            this.panel1.Size = new System.Drawing.Size(1342, 127);
             this.panel1.TabIndex = 1;
             // 
             // panel5
@@ -97,10 +96,21 @@ namespace ConsolFromApp
             this.panel5.Controls.Add(this.rnCb);
             this.panel5.Controls.Add(this.rmCb);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 57);
+            this.panel5.Location = new System.Drawing.Point(0, 53);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1342, 74);
             this.panel5.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1007, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 34);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Clear";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SearchBtn
             // 
@@ -198,7 +208,7 @@ namespace ConsolFromApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 24F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(25, 0);
+            this.label1.Location = new System.Drawing.Point(23, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(534, 49);
             this.label1.TabIndex = 0;
@@ -206,17 +216,12 @@ namespace ConsolFromApp
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Candara", 10.2F);
-            this.panel2.Location = new System.Drawing.Point(0, 131);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 127);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel2.Size = new System.Drawing.Size(1342, 444);
+            this.panel2.Size = new System.Drawing.Size(1342, 448);
             this.panel2.TabIndex = 2;
             // 
             // panel4
@@ -225,12 +230,12 @@ namespace ConsolFromApp
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(5, 12);
+            this.panel4.Location = new System.Drawing.Point(0, 8);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panel4.Size = new System.Drawing.Size(1332, 428);
-            this.panel4.TabIndex = 2;
+            this.panel4.Size = new System.Drawing.Size(1342, 440);
+            this.panel4.TabIndex = 4;
             // 
             // panel7
             // 
@@ -239,7 +244,7 @@ namespace ConsolFromApp
             this.panel7.Location = new System.Drawing.Point(5, 4);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1318, 416);
+            this.panel7.Size = new System.Drawing.Size(1328, 428);
             this.panel7.TabIndex = 2;
             // 
             // panel8
@@ -250,7 +255,7 @@ namespace ConsolFromApp
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1318, 416);
+            this.panel8.Size = new System.Drawing.Size(1328, 428);
             this.panel8.TabIndex = 2;
             // 
             // rpViewDataGrid
@@ -265,7 +270,7 @@ namespace ConsolFromApp
             this.rpViewDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 10.2F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -274,14 +279,6 @@ namespace ConsolFromApp
             this.rpViewDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.rpViewDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rpViewDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Historic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.rpViewDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.rpViewDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rpViewDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.rpViewDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -289,7 +286,7 @@ namespace ConsolFromApp
             this.rpViewDataGrid.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.rpViewDataGrid.Name = "rpViewDataGrid";
             this.rpViewDataGrid.RowHeadersWidth = 10;
-            this.rpViewDataGrid.Size = new System.Drawing.Size(1318, 347);
+            this.rpViewDataGrid.Size = new System.Drawing.Size(1328, 359);
             this.rpViewDataGrid.TabIndex = 0;
             this.rpViewDataGrid.TabStop = false;
             // 
@@ -298,11 +295,11 @@ namespace ConsolFromApp
             this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel6.Controls.Add(this.button1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 347);
+            this.panel6.Location = new System.Drawing.Point(0, 359);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 8, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
-            this.panel6.Size = new System.Drawing.Size(1318, 69);
+            this.panel6.Size = new System.Drawing.Size(1328, 69);
             this.panel6.TabIndex = 1;
             // 
             // button1
@@ -310,7 +307,7 @@ namespace ConsolFromApp
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1122, 8);
+            this.button1.Location = new System.Drawing.Point(1132, 8);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -318,27 +315,17 @@ namespace ConsolFromApp
             this.button1.TabIndex = 0;
             this.button1.Text = "      Download";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(5, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1332, 8);
-            this.panel3.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1007, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 34);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panel3.Size = new System.Drawing.Size(1342, 8);
+            this.panel3.TabIndex = 3;
             // 
             // RP_View
             // 
@@ -368,14 +355,6 @@ namespace ConsolFromApp
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Panel panel1;
         private Label label1;
-        private Panel panel2;
-        private Panel panel3;
-        private DataGridView rpViewDataGrid;
-        private Panel panel4;
-        private Panel panel6;
-        private Button button1;
-        private Panel panel7;
-        private Panel panel8;
         private Panel panel5;
         private ComboBox gocCb;
         private ComboBox soeidCb;
@@ -387,5 +366,13 @@ namespace ConsolFromApp
         private Label label3;
         private Button SearchBtn;
         private Button button2;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel7;
+        private Panel panel8;
+        private DataGridView rpViewDataGrid;
+        private Panel panel6;
+        private Button button1;
     }
 }
