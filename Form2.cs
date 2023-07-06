@@ -19,10 +19,23 @@ namespace WindowsFormsApp1
         public Form2()
         {
             InitializeComponent();
+
+            // Attach the CloseUp event handler to date1
+            date1.CloseUp += date1_CloseUp;
+        }
+
+        private void date1_CloseUp(object sender, EventArgs e)
+        {
+            // Retrieve the selected value of date1
+            DateTime selectedDate = date1.Value;
+
+            // Set the minimum date or disable dates in date2 based on selectedDate
+            date2.MinDate = selectedDate.AddDays(1);
         }
 
 
-       // string connstring = "server=localhost;uid=root;pwd=sql@password;database=project";
+
+        // string connstring = "server=localhost;uid=root;pwd=sql@password;database=project";
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=sql@password;database=project");
         private void label5_Click(object sender, EventArgs e)
         {
@@ -148,6 +161,11 @@ namespace WindowsFormsApp1
         }
 
         private void NetL1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void date2_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -259,7 +259,7 @@
             this.date1.Name = "date1";
             this.date1.Size = new System.Drawing.Size(200, 22);
             this.date1.TabIndex = 28;
-            this.date1.Value = new System.DateTime(2023, 6, 30, 0, 0, 0, 0);
+            this.date1.Value = new System.DateTime(2023, 7, 7, 0, 0, 0, 0);
             this.date1.ValueChanged += new System.EventHandler(this.date1_ValueChanged);
             // 
             // date2
@@ -268,7 +268,7 @@
             this.date2.Name = "date2";
             this.date2.Size = new System.Drawing.Size(200, 22);
             this.date2.TabIndex = 29;
-            this.date2.Value = new System.DateTime(2023, 6, 28, 16, 11, 4, 0);
+            this.date2.Value = new System.DateTime(2023, 7, 8, 0, 0, 0, 0);
             // 
             // label_cntry
             // 

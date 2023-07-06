@@ -74,8 +74,7 @@ namespace WindowsFormsApp2
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = GetProjectMasterData();
-            comboBox2.Visible = false;
+            dataGridView1.DataSource = GetProjectMasterData();         
 
             // Set up the checkbox column
             DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn
@@ -90,7 +89,23 @@ namespace WindowsFormsApp2
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             button4.Click += button4_Click;
 
-            comboBox2.TextUpdate += comboBox2_TextUpdate;
+            // Populate the combo box with project_type values
+            string query = "SELECT DISTINCT project_type FROM p_master";
+            command = new MySqlCommand(query, connection);
+
+            connection.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string projectType = reader.GetString(reader.GetOrdinal("project_type"));
+
+                comboBox_p_type.Items.Add(projectType);
+            }
+
+            reader.Close();
+            connection.Close();
+            
 
         }
 
@@ -106,109 +121,7 @@ namespace WindowsFormsApp2
             form2.Show();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-
-            string selectedValue = comboBox1.SelectedItem.ToString();
-
-            selected_column = selectedValue;
-            // Show or hide comboBoxOption1 based on the selected value of comboBoxMain
-            if (selectedValue == "Program_id")
-            {
-                comboBox2.Visible = true;
-                // Populate comboBoxOption1 with the desired options
-
-                comboBox2.DataSource = null;//new
-                comboBox2.Items.Clear();
-
-
-                List<string> prog_ids = new List<string>();
-                prog_ids.Add("Not Selected");
-                string query = "select * from p_master";
-
-                MySqlCommand command = new MySqlCommand(query, connection);
-                connection.Open();
-
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string progid = reader.GetString(reader.GetOrdinal("Program_Id"));
-                    prog_ids.Add(progid);
-                }
-
-                comboBox2.DataSource = prog_ids;
-                reader.Close();
-            }
-
-
-            else if (selectedValue == "Project_type")
-            {
-                comboBox2.Visible = true;
-                // Populate comboBoxOption1 with the desired options
-                comboBox2.Items.Clear();
-                comboBox2.Items.Add("Type A");
-                comboBox2.Items.Add("Type B");
-                comboBox2.Items.Add("Type C");
-
-            }
-
-            else if (selectedValue == "Project_manager")
-            {
-                comboBox2.Visible = true;
-                // Populate comboBoxOption1 with the desired options
-                comboBox2.Items.Clear();
-                comboBox2.Items.Add("SOE001");
-                comboBox2.Items.Add("SOE002");
-                comboBox2.Items.Add("SOE003");
-                comboBox2.Items.Add("SOE004");
-                // Add other options as needed
-            }
-
-
-            else
-            {
-                comboBox2.Visible = false;
-            }
-
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string option = comboBox2.SelectedItem.ToString();
-
-            string connstring = "server=localhost;uid=root;pwd=sql@password;database=project";
-            MySqlConnection conn = new MySqlConnection(connstring);
-            DataTable dataTable = new DataTable();
-            MySqlDataAdapter adapter;
-            try
-            {
-                conn.Open();
-                string sql = " SELECT * FROM project.p_master where concat(`" + selected_column + "`) like '%" + option + "%'";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                adapter = new MySqlDataAdapter(cmd);
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            // return dataTable;
-
-
-        }
-
-
-
-
-
+       
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Visible && e.RowIndex >= 0 && e.ColumnIndex == 0 && e.RowIndex < dataGridView1.Rows.Count)
@@ -324,37 +237,9 @@ namespace WindowsFormsApp2
             {
                 conn.Close();
             }
-
         }
 
-        private void comboBox2_TextUpdate(object sender, EventArgs e)
-        {
-            string filterText = comboBox2.Text.ToLower();
-
-            List<string> filteredItems = new List<string>();
-
-            foreach (string item in comboBox2.Items)
-            {
-                if (item.ToLower().Contains(filterText))
-                {
-                    filteredItems.Add(item);
-                }
-            }
-
-            comboBox1.DataSource = null;
-            comboBox1.DataSource = filteredItems;
-
-            // Show the drop-down list
-            comboBox1.DroppedDown = true;
-
-            // Set the text to the filtered text
-            comboBox1.Text = filterText;
-
-            // Move the cursor to the end of the text
-            comboBox1.SelectionStart = filterText.Length;
-            comboBox1.SelectionLength = 0;
-        }
-
+       
         private void button5_Click(object sender, EventArgs e)
         {
             using (connection = new MySqlConnection(connstring))
@@ -534,6 +419,9 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void comboBox_p_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
