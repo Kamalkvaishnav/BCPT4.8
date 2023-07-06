@@ -103,6 +103,19 @@ namespace BCPT
                     ftCb.Items.Add(value);
                 }
             }
+
+            // Populate monthCb with numbers 1 to 12
+            for (int month = 1; month <= 12; month++)
+            {
+                monthCb.Items.Add(month);
+            }
+
+            // Populate yearCb with selectable years
+            var years = Enumerable.Range(DateTime.Now.Year - 10, 20); // Adjust the range of years as per your requirement
+            foreach (int year in years)
+            {
+                yearCb.Items.Add(year);
+            }
         }
 
         private void FilterDataGridView()

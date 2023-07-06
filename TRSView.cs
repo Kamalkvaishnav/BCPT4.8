@@ -14,6 +14,7 @@ using OfficeOpenXml.Table;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace ConsolFromApp
 {
@@ -180,6 +181,16 @@ namespace ConsolFromApp
             textBox4.Text = string.Empty;
             textBox5.Text = string.Empty;
             comboBox1.SelectedIndex = -1; // Month ComboBox
+            string query = $@"SELECT rm.goc AS GOC, rm.resource_name AS ResourceName, rm.SOEID AS SOEID, pm.PTSID AS PTSID, pm.description AS ProjectName, pm.project_manager AS ProjectManager
+                  FROM allocation_master AS am
+                  JOIN resource_master rm ON am.SOEID = rm.SOEID
+                  JOIN project_master pm ON am.PTSID = pm.PTSID
+                  ORDER BY rm.goc";
+            command = new MySqlCommand(query, connection);
+            adapter = new MySqlDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
         }
         public void func()
         {
@@ -359,6 +370,21 @@ namespace ConsolFromApp
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void TRSView_Load(object sender, EventArgs e)
+        {
+            string query1 = $@"SELECT rm.goc AS GOC, rm.resource_name AS ResourceName, rm.SOEID AS SOEID, pm.PTSID AS PTSID, pm.description AS ProjectName, pm.project_manager AS ProjectManager
+                  FROM allocation_master AS am
+                  JOIN resource_master rm ON am.SOEID = rm.SOEID
+                  JOIN project_master pm ON am.PTSID = pm.PTSID
+                   
+                  ORDER BY rm.goc";
+            command = new MySqlCommand(query1, connection);
+            adapter = new MySqlDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
         }
     }
 }
