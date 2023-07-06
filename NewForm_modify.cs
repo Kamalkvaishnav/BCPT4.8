@@ -28,7 +28,8 @@ namespace WindowsFormsApp1
         public NewForm_modify(string ptsid)
         {
             InitializeComponent();
-            
+            //date1.MinDate = DateTime.Today;
+            date1.CloseUp += date1_CloseUp;
 
             this.ptsid = ptsid;
             string query = "Select * from p_master where PTSID = @ptsid";
@@ -63,11 +64,22 @@ namespace WindowsFormsApp1
                     SecoreL1.Text = row["secore_l1"].ToString();
                     NetL1.Text = row["dotnet_l1"].ToString();
                 }
-            }           
+            }
+
+            
+        }
+
+        private void date1_CloseUp(object sender, EventArgs e)
+        {
+            // Retrieve the selected value of date1
+            DateTime selectedDate = date1.Value;
+
+            // Set the minimum date or disable dates in date2 based on selectedDate
+            date2.MinDate = selectedDate.AddDays(1);
         }
 
 
-       
+
         private void label5_Click(object sender, EventArgs e)
         {
 
